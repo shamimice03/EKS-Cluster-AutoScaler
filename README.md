@@ -10,5 +10,12 @@ cd /eks-clusterAutoScaler
 
 ```
 eksctl create cluster -f managed-nodegroup.yaml
+```
 
+#### Check EKS cluster 
+
+```
+kubectl get svc
+
+kubectl get nodes
 ```
