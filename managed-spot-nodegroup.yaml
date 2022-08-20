@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: kubehub-cluster-01
+  region: ap-northeast-1
+  version: "1.22"
+
+managedNodeGroups:
+- name: managed-spot-ng-01
+  spot: true               
+  amiFamily: AmazonLinux2
+  desiredCapacity: 2
+  minSize: 0
+  maxSize: 4
+  volumeSize: 10
+  volumeType: gp2
+  instanceTypes:
+  - t3a.small
+  - t3.small
