@@ -18,6 +18,3 @@ managedNodeGroups:
   instanceTypes:
   - t3a.small
   - t3.small
-  ssh:
-    allow: true
-    publicKeyPath: ec2-access
