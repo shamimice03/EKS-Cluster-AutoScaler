@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx-webserver
+  template:
+    metadata:
+      labels:
+        app: nginx-webserver
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: 1
