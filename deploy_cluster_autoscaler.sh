@@ -1,9 +1,11 @@
+#!/bin/bash
+
+
 # download files
 
 git clone https://github.com/shamimice03/EKS-Cluster-AutoScaler.git  /eks-clusterAutoScaler
 cd /eks-clusterAutoScaler
 
-#!/bin/bash
 
 # deploy cluster
 eksctl create cluster -f managed-nodegroup.yaml
