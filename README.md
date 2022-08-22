@@ -1,8 +1,9 @@
+##Cluster-Autoscaler Installation Process
+
 #### Download this repository to a folder on your system 
 
 ```
 git clone https://github.com/shamimice03/EKS-Cluster-AutoScaler.git  /eks-clusterAutoScaler
-
 cd /eks-clusterAutoScaler
 ```
 
@@ -16,11 +17,10 @@ eksctl create cluster -f managed-nodegroup.yaml
 
 ```
 kubectl get svc
-
 kubectl get nodes
 ```
 
-#### OIDC ID
+#### Create OIDC ID
 ```
 CLUSTER_NAME=kubehub-cluster-01
 eksctl utils associate-iam-oidc-provider --cluster $CLUSTER_NAME --approve
