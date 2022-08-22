@@ -61,7 +61,7 @@ ROLE_ARN=$(aws iam list-roles --query 'Roles[?RoleName==`AmazonEKSClusterAutosca
 #### Manipulate cluster-autoscaler manifest file
 ```
 sed  -i "s/<ROLE ARN>/$ROLE_ARN/" cluster-autoscaler.yaml
-sed  "s/<YOUR CLUSTER NAME>/$CLUSTER_NAME\n            - --balance-similar-node-groups\n            - --skip-nodes-with-system-pods=false/g" cluster-autoscaler.yaml
+sed  -i "s/<YOUR CLUSTER NAME>/$CLUSTER_NAME\n            - --balance-similar-node-groups\n            - --skip-nodes-with-system-pods=false/g" cluster-autoscaler.yaml
 ```
 
 #### Deploy cluster-autoscaler
