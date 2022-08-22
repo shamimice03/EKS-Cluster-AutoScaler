@@ -1,4 +1,4 @@
-#Cluster-Autoscaler | EKS
+# Cluster-Autoscaler | EKS
 
 ## Cluster-Autoscaler Installation Process
 
