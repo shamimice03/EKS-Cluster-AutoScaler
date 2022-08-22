@@ -1,6 +1,6 @@
 # Cluster-Autoscaler | EKS
 
-## Cluster-Autoscaler Installation Process
+### Cluster-Autoscaler Installation Process
 
 
 #### Download this repository to a folder on your system 
@@ -69,7 +69,7 @@ sed  -i "s#<YOUR CLUSTER NAME>#$CLUSTER_NAME\n            - --balance-similar-no
 kubectl create -f cluster-autoscaler.yaml
 ```
 
-## Uninstallation Process
+### Uninstallation Process
 
 #### Set the environment varibale if necessary 
 ```
