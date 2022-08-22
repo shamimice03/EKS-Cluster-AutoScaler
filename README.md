@@ -1,4 +1,4 @@
-# Cluster-Autoscaler | EKS
+# Cluster-Autoscaler   ||   AWS EKS
 
 ### Cluster-Autoscaler Installation Process
 
