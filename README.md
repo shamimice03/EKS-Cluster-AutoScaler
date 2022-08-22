@@ -68,3 +68,33 @@ sed  -i "s#<YOUR CLUSTER NAME>#$CLUSTER_NAME\n            - --balance-similar-no
 ```
 kubectl create -f cluster-autoscaler.yaml
 ```
+
+## Uninstallation Process
+
+#### Set the environment varibale if necessary 
+```
+POLICY_ARN=$(aws iam list-policies --query 'Policies[?PolicyName==`AmazonEKSClusterAutoscalerPolicy`].Arn' --output text)
+CLUSTER_NAME=kubehub-cluster-01
+```
+
+#### Delete cluster-autoscaler
+```
+kubectl delete -f cluster-autoscaler.yaml
+```
+
+#### Delete service account and attached IAM Role
+```
+eksctl delete iamserviceaccount  \
+ --cluster=$CLUSTER_NAME  \
+ --name=cluster-autoscaler \
+ --namespace=kube-system
+```
+
+#### Delete policy
+```
+aws iam delete-policy --policy-arn $POLICY_ARN
+```
+
+
+
+
