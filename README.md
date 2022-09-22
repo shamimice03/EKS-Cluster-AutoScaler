@@ -20,7 +20,7 @@
 
 # Execute the script
 # After execution, you need to provide your cluster-name.
->> bash cluster-autoscaler.sh
+>> bash cleanup.sh
 
 ```
 
