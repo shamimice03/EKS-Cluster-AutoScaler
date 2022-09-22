@@ -43,9 +43,9 @@ then
     export SA_NAME='cluster-autoscaler'
     
     eksctl create iamserviceaccount \
-    --name=${SA_NAME} \    
-    --cluster=${CLUSTER_NAME} \
-    --role-name=${ROLE_NAME} \
+    --name ${SA_NAME} \    
+    --cluster ${CLUSTER_NAME} \
+    --role-name ${ROLE_NAME} \
     --attach-policy-arn=${POLICY_ARN} \
     --namespace=kube-system \
     --approve \
