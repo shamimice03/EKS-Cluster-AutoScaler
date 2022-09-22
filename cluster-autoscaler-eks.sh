@@ -44,12 +44,13 @@ then
     
     eksctl create iamserviceaccount \
     --name=${SA_NAME} \    
-    --role-name ${ROLE_NAME} \
-    --attach-policy-arn=${POLICY_ARN} \
     --cluster=${CLUSTER_NAME} \
+    --role-name=${ROLE_NAME} \
+    --attach-policy-arn=${POLICY_ARN} \
     --namespace=kube-system \
-    --override-existing-serviceaccounts \
-    --approve
+    --approve \
+    --override-existing-serviceaccounts 
+
     
     export ROLE_ARN=$(aws iam list-roles --query 'Roles[?RoleName==`AmazonEKSClusterAutoscalerRole`].Arn' --output text)
     
