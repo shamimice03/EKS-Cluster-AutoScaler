@@ -16,8 +16,6 @@ aws iam detach-role-policy --role-name=${ROLE_NAME}  --policy-arn=${POLICY_ARN}
 aws iam delete-role --role-name=${ROLE_NAME}
 aws iam delete-policy --policy-arn=${POLICY_ARN}
 
-
-
 # Delete IAM Role and Service Account　
 eksctl delete iamserviceaccount  \
  --cluster=${CLUSTER_NAME}  \
