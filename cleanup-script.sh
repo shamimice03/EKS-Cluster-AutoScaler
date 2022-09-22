@@ -12,9 +12,9 @@ kubectl delete -f cluster-autoscaler.yaml
 
 # Delete IAM Role and Service Account　
 eksctl delete iamserviceaccount  \
- --cluster=$CLUSTER_NAME  \
+ --cluster=${CLUSTER_NAME}  \
  --name=cluster-autoscaler \
  --namespace=kube-system
 
 # Delete policy
-aws iam delete-policy --policy-arn $POLICY_ARN
+aws iam delete-policy --policy-arn ${POLICY_ARN}
