@@ -6,7 +6,7 @@ read -p 'Enter the Cluster Name : ' clustername
 
 export CLUSTER_NAME=$clustername
 
-echo -e "\nCluster Name is: ${CLUSTER_NAME}"
+echo -e "\nCluster Name : ${CLUSTER_NAME}"
 echo -e "\nIf you want to proceed with above informaton, type \"yes\" or \"no\": " 
 read value
 
@@ -39,8 +39,8 @@ then
     echo ${POLICY_ARN}
     
     # Create a Service Account and IAM Role with POLICY 
-    export ROLE_NAME=AmazonEKSClusterAutoscalerRole
-    export SA_NAME=cluster-autoscaler
+    export ROLE_NAME='AmazonEKSClusterAutoscalerRole'
+    export SA_NAME='cluster-autoscaler'
     
     eksctl create iamserviceaccount \
     --name=${SA_NAME} \    
@@ -63,7 +63,7 @@ then
 
     # Replace the <YOUR CLUSTER NAME> placeholder with the CLUSTER_NAME and 
     # Two commands under the the cluster-autoscaler deployment
-    printf -v spc %12s
+    printf -v spc %12s      #adding spaces
     sed -i "s#<YOUR CLUSTER NAME>#$CLUSTER_NAME\n${spc}- --balance-similar-node-groups\n${spc}- --skip-nodes-with-system-pods=false#g" cluster-autoscaler.yaml
 
     # Deploy the manifest file
