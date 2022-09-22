@@ -73,17 +73,3 @@ else
     echo -e "See you next time, Good Luck.\n" 
     exit
 fi
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
