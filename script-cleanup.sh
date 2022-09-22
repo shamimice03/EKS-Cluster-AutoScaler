@@ -4,6 +4,8 @@
 
 read -p 'Enter the Cluster Name : ' clustername
 
+echo "Starting......"
+
 export CLUSTER_NAME=$clustername
 export POLICY_ARN=$(aws iam list-policies --query 'Policies[?PolicyName==`AmazonEKSClusterAutoscalerPolicy`].Arn' --output text)
 export ROLE_NAME='AmazonEKSClusterAutoscalerRole'
