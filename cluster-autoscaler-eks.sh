@@ -44,7 +44,7 @@ then
     
     eksctl create iamserviceaccount \
     --name=${SA_NAME} \    
-    --role-name=${ROLE_NAME} \
+    --role-name ${ROLE_NAME} \
     --attach-policy-arn=${POLICY_ARN} \
     --cluster=${CLUSTER_NAME} \
     --namespace=kube-system \
